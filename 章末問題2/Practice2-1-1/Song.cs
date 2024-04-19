@@ -1,5 +1,4 @@
-﻿
-namespace Practice2_1_1 {
+﻿namespace Practice2_1_1 {
 
     /// <summary>
     /// 以下のプロパティを持つSongクラス
@@ -8,8 +7,20 @@ namespace Practice2_1_1 {
     /// Length：int型(演奏時間)
     /// </summary>
     internal class Song {
+
+        /// <summary>
+        /// /歌のタイトル
+        /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// アーティスト名
+        /// </summary>
         public string ArtistName { get; set; }
+
+        /// <summary>
+        /// 演奏時間
+        /// </summary>
         public int Length { get; set; }
     }
 }

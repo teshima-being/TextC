@@ -10,9 +10,9 @@ namespace Practice2_3 {
         //※「sale.txt」を読み取り、店舗別の売上高をコンソールに出力するプログラム
 
         static void Main(string[] args) {
-            SalesCounter wSales = new SalesCounter(@"..\..\sales.txt");
-            IDictionary<string, int> wAmountPerStore = wSales.GetPerStoreSales();
-            foreach (KeyValuePair<string, int> wKeyPair in wAmountPerStore) {
+            var wSales = new SalesCounter(@"..\..\sales.txt");
+            IDictionary<string, int> wAmountPerStores = wSales.GetPerStoreSales();
+            foreach (KeyValuePair<string, int> wKeyPair in wAmountPerStores) {
                 Console.WriteLine($"{wKeyPair.Key}の売り上げは{wKeyPair.Value:0,000,000}円です");
             }
         }

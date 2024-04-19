@@ -1,15 +1,23 @@
-﻿
-namespace Practice2_3 {
+﻿namespace Practice2_3 {
 
     /// <summary>
     /// 売上(店舗名・商品カテゴリ・売上高)を表すクラス
     /// </summary>
     internal class Sale {
-        //店舗名
+        
+        /// <summary>
+        /// 店舗名
+        /// </summary>
         public string ShopName { get; set; }
-        //商品カテゴリ
+        
+        /// <summary>
+        /// 商品カテゴリ
+        /// </summary>
         public string ProductCategory { get; set; }
-        //売上高
+        
+        /// <summary>
+        /// 売上高
+        /// </summary>
         public int Amount { get; set; }
     }
 }

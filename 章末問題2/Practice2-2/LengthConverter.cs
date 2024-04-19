@@ -1,5 +1,4 @@
-﻿
-namespace Practice2_2 {
+﻿namespace Practice2_2 {
 
     /// <summary>
     /// インチとメートルの単位変換クラス

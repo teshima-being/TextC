@@ -1,5 +1,4 @@
-﻿
-namespace Practice2_1_3 {
+﻿namespace Practice2_1_3 {
 
     //問題2-1-3
     //作成したSongクラスのインスタンスを複数生成し、配列wSongsに格納してください。
