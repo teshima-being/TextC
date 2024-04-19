@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice1_1_2 {
-    //構造体
+﻿namespace Practice1_1_2 {
+    /// <summary>
+    /// MyStruct構造体
+    /// </summary>
     struct MyStruct {
+        /// <summary>
+        /// パラメータX
+        /// </summary>
         public int X { get; set; }
+        /// <summary>
+        /// パラメータY
+        /// </summary>
         public int Y { get; set; }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice1_1_2 {
     internal class Program {
@@ -34,8 +30,8 @@ namespace Practice1_1_2 {
             //Mainメソッドで、PrintObjectsメソッドを呼び出すコードを書いてください。
             //MyClass、MyStructオブジェクトの値は、自由に決めて構いません。
 
-            MyClass wMyClass = new MyClass { X = 1, Y = 2 };
-            MyStruct wMyStruct = new MyStruct { X = 1, Y = 2 };
+            var wMyClass = new MyClass { X = 1, Y = 2 };
+            var wMyStruct = new MyStruct { X = 1, Y = 2 };
             PrintObjects(wMyClass, wMyStruct);
 
             //問題1-2-3
