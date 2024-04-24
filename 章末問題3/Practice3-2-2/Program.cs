@@ -28,7 +28,7 @@ namespace Practice3_2_2 {
         /// <param name="vChar">検索文字(1文字)</param>
         public static void CountCities(List<string> vList, char vChar) {
 
-            int wCountCities = vList.Count(s => s.Contains(vChar));
+            int wCountCities = vList.Count(x => x.Contains(vChar));
             
             if (wCountCities == 0) {
                 Console.WriteLine($"文字{vChar}を含む都市名はリストに存在しません。");

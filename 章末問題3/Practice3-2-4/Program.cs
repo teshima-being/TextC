@@ -17,7 +17,7 @@ namespace Practice3_2_4 {
             };
 
             //WhereメソッドとSelectメソッドを利用する
-            IEnumerable<int> wCityEnum = wNames.Where(s => s[0] == 'B').Select(s => s.Length);
+            IEnumerable<int> wCityEnum = wNames.Where(x => x[0] == 'B').Select(x => x.Length);
             foreach (int wCity in wCityEnum) {
                 Console.WriteLine(wCity.ToString());
             }
@@ -34,7 +34,7 @@ namespace Practice3_2_4 {
         /// <param name="vChar">検索文字(1文字)</param>
         public static void CountCharacter(List<string> vList, char vChar) {
             
-            List<string> wCityNames = vList.Where(s => s[0] == vChar).ToList();
+            var wCityNames = vList.Where(x => x[0] == vChar).ToList();
 
             if (wCityNames.Count == 0) {
                 Console.WriteLine($"文字{vChar}で始まる都市名はリストに存在しません。");

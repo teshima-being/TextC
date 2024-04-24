@@ -26,23 +26,22 @@ namespace Practice3_2_1 {
         /// リストに存在しない値を入力すると処理を終了する。
         /// </summary>
         /// <param name="vList">都市名リスト</param>
-        public static void ShowIndex(List<string> vList){
+        public static void ShowIndex(List<string> vList) {
 
             Console.WriteLine("都市名を入力してください。");
-            
-            do {
+
+            while(true) {
                 //コンソールに入力された値を変数wCityNameに格納
                 string wCityName = Console.ReadLine();
 
-                int wCityIndex = vList.FindIndex(s => s == wCityName);
+                int wCityIndex = vList.FindIndex(x => x == wCityName);
 
                 if (wCityIndex == -1) {
                     Console.WriteLine($"{wCityName}はリストに存在しません。アプリケーションを終了します。");
                     return;
                 }
                 Console.WriteLine($"{wCityName}はリストの{wCityIndex + 1}番目にあります。");
-
-            } while (true);
+            }
         }
     }
 }

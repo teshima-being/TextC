@@ -15,7 +15,7 @@ namespace Practice3_1_4 {
             //問題用リスト
             var wNumbers = new List<int> { 12, 87, 94, 14, 53, 20, 40, 35, 76, 91, 31, 17, 48 };
 
-            List<int> wNewNumbers = wNumbers.Select(n => n * 2).ToList();
+            IEnumerable<int> wNewNumbers = wNumbers.Select(x => x * 2);
 
             var wResult = new StringBuilder("問題用リストの各要素を2倍にした値は以下の通りです。\n");
 

@@ -18,8 +18,7 @@ namespace Practice3_2_3 {
             };
 
             //PickUpCitiesメソッド呼び出し
-            PickUpCities(wNames, 'o');
-            
+            PickUpCities(wNames, 'o');      
         }
 
         /// <summary>
@@ -29,7 +28,7 @@ namespace Practice3_2_3 {
         /// <param name="vChar">検索文字(1文字)</param>
         public static void PickUpCities(List<string> vList, char vChar) {
 
-            string[] wCities = vList.Where(s => s.Contains(vChar)).ToArray();
+            string[] wCities = vList.Where(x => x.Contains(vChar)).ToArray();
 
             if (wCities == null) {
                 Console.WriteLine($"文字{vChar}を含む都市名はリストに存在しません。");

@@ -16,7 +16,7 @@ namespace Practice3_1_2 {
             var wNumbers = new List<int> { 12, 87, 94, 14, 53, 20, 40, 35, 76, 91, 31, 17, 48 };
 
             //問題用リストの各要素を割る数で割った結果を出力する
-            wNumbers.ForEach(n => Console.WriteLine(n / C_Number));
+            wNumbers.ForEach(x => Console.WriteLine(x / C_Number));
         }
     }
 }
