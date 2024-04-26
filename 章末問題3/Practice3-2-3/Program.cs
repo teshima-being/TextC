@@ -18,32 +18,31 @@ namespace Practice3_2_3 {
             };
 
             //PickUpCitiesメソッド呼び出し
-            PickUpCities(wNames, 'o');      
+            PickUpCities(wNames, 'o');
         }
 
         /// <summary>
         /// 都市名リストと検索文字を引数に受け取り、検索文字が含まれる都市名のみをコンソールに表示する。
         /// </summary>
-        /// <param name="vList">都市名リスト</param>
-        /// <param name="vChar">検索文字(1文字)</param>
-        public static void PickUpCities(List<string> vList, char vChar) {
+        /// <param name="vCityNames">都市名リスト</param>
+        /// <param name="vKeyWord">検索文字(1文字)</param>
+        public static void PickUpCities(IEnumerable<string> vCityNames, char vKeyWord) {
 
-            string[] wCities = vList.Where(x => x.Contains(vChar)).ToArray();
+            string[] wCities = vCityNames.Where(x => x.Contains(vKeyWord)).ToArray();
 
             if (wCities == null) {
-                Console.WriteLine($"文字{vChar}を含む都市名はリストに存在しません。");
+                Console.WriteLine($"文字{vKeyWord}を含む都市名はリストに存在しません。");
                 return;
             }
 
-            var wCityNames = new StringBuilder($"文字{vChar}を含む都市名は以下のようになります。\n");
+            var wCityNamesResult = new StringBuilder($"文字{vKeyWord}を含む都市名は以下のようになります。\n");
 
-            foreach (string wCity in wCities)
-            {
-                wCityNames.Append(wCity + ", ");
+            foreach (string wCity in wCities) {
+                wCityNamesResult.Append(wCity + ", ");
             }
 
-            wCityNames.Length--;    //wCityNamesの最後のカンマを削除
-            Console.WriteLine(wCityNames.ToString());
+            wCityNamesResult.Length--;    //wCityNamesの最後のカンマを削除
+            Console.WriteLine(wCityNamesResult.ToString());
         }
     }
 }

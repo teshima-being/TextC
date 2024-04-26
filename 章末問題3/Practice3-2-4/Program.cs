@@ -30,19 +30,19 @@ namespace Practice3_2_4 {
         /// <summary>
         /// 都市名リストと検索文字を引数に受け取り、検索文字で始まる都市名とその文字数をコンソールに表示する。
         /// </summary>
-        /// <param name="vList">都市名リスト</param>
-        /// <param name="vChar">検索文字(1文字)</param>
-        public static void CountCharacter(List<string> vList, char vChar) {
+        /// <param name="vCityNames">都市名リスト</param>
+        /// <param name="vKeyWord">検索文字(1文字)</param>
+        public static void CountCharacter(IEnumerable<string> vCityNames, char vKeyWord) {
             
-            var wCityNames = vList.Where(x => x[0] == vChar).ToList();
+            var wCityNamesStartWithKey = vCityNames.Where(x => x[0] == vKeyWord);
 
-            if (wCityNames.Count == 0) {
-                Console.WriteLine($"文字{vChar}で始まる都市名はリストに存在しません。");
+            if (wCityNamesStartWithKey.Count() == 0) {
+                Console.WriteLine($"文字{vKeyWord}で始まる都市名はリストに存在しません。");
                 return;
             }
-            Console.WriteLine($"文字{vChar}で始まる都市名とその文字数は以下の通りです。");
+            Console.WriteLine($"文字{vKeyWord}で始まる都市名とその文字数は以下の通りです。");
 
-            foreach (string wCity in wCityNames) {
+            foreach (string wCity in wCityNamesStartWithKey) {
                 Console.WriteLine($"都市名 {wCity}, 文字数 {wCity.Length}");
             }
         }

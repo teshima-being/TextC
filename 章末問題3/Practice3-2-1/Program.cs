@@ -25,8 +25,8 @@ namespace Practice3_2_1 {
         /// その結果をコンソールに表示する。
         /// リストに存在しない値を入力すると処理を終了する。
         /// </summary>
-        /// <param name="vList">都市名リスト</param>
-        public static void ShowIndex(List<string> vList) {
+        /// <param name="vCityNames">都市名リスト</param>
+        public static void ShowIndex(List<string> vCityNames) {
 
             Console.WriteLine("都市名を入力してください。");
 
@@ -34,7 +34,7 @@ namespace Practice3_2_1 {
                 //コンソールに入力された値を変数wCityNameに格納
                 string wCityName = Console.ReadLine();
 
-                int wCityIndex = vList.FindIndex(x => x == wCityName);
+                int wCityIndex = vCityNames.FindIndex(x => x == wCityName);
 
                 if (wCityIndex == -1) {
                     Console.WriteLine($"{wCityName}はリストに存在しません。アプリケーションを終了します。");
