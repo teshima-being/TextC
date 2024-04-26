@@ -11,18 +11,23 @@ namespace Practice5_3_3 {
             //問題用文字列
             string wText = "  Jackdaws 　love　my big　　 sphinx 　of quartz　　";
 
+            if (string.IsNullOrEmpty(wText)) {
+                Console.WriteLine("問題用文字列がnullもしくは空文字であるため処理を中止します");
+                return;
+            }
+
             Console.WriteLine($"問題用文字列に含まれる単語数は{CountWords(wText)}個です。");
         }
 
         /// <summary>
         /// 対象文字列を引数に受け取り、その文字列内の単語の個数を返します。
         /// </summary>
-        /// <param name="vString">対象文字列</param>
+        /// <param name="vTargetText">対象文字列</param>
         /// <returns>対象文字列内の単語数</returns>
-        public static int CountWords(string vString) {
+        public static int CountWords(string vTargetText) {
 
-            //文字列の前後の空白を除去し、文字列を空白で分割した要素を空データを無視して配列に格納する
-            string[] wWords = vString.Trim().Split(new[] { ' ' , '　' }, StringSplitOptions.RemoveEmptyEntries);
+            //文字列を空白で分割した要素を空データを無視して配列に格納する
+            string[] wWords = vTargetText.Trim().Split(new[] { ' ' , '　' }, StringSplitOptions.RemoveEmptyEntries);
 
             return wWords.Length;
         }

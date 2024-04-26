@@ -11,13 +11,11 @@ namespace Practice5_2 {
             Console.WriteLine("-2,147,483,648～-2,147,483,648の範囲の整数を入力してください。");
 
             while (true) {
-                if (int.TryParse(Console.ReadLine(), out int wNumber)) {
-                    Console.WriteLine(wNumber.ToString("#,0"));
-                } 
-                else {
+                if (!int.TryParse(Console.ReadLine(), out int wNumber)) {
                     Console.WriteLine("正常な数値が入力されていません。処理を終了します。");
                     break;
                 }
+                Console.WriteLine(wNumber.ToString("#,0"));
             }
         }
     }

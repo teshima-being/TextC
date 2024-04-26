@@ -12,7 +12,12 @@ namespace Practice5_3_2 {
             //問題用文字列
             string wText = "Jackdaws love my big sphinx of quartz";
 
-            //置換したい文字列の指定
+            if (string.IsNullOrEmpty(wText)) {
+                Console.WriteLine("問題用文字列がnullもしくは空文字であるため処理を中止します");
+                return;
+            }
+
+            //置換したい文字列の指定（今回はbigを入力）
             Console.WriteLine("置換したい文字列を入力してください。");
             string wTargetWord = Console.ReadLine();
 
@@ -22,7 +27,7 @@ namespace Practice5_3_2 {
                 return;
             }
 
-            //置換後の文字列の指定
+            //置換後の文字列の指定（今回はsmallを入力）
             Console.WriteLine("置換後の文字列を入力してください。");
             string wReplacedWord = Console.ReadLine();
 
@@ -34,16 +39,16 @@ namespace Practice5_3_2 {
         /// 対象文字列、置換文字列、置換後文字列を引数に受け取り、対象文字列内の置換文字列を
         /// 置換した後の文字列を返します。
         /// </summary>
-        /// <param name="vString">対象文字列</param>
+        /// <param name="vText">対象文字列</param>
         /// <param name="vTarget">置換文字列</param>
         /// <param name="vReplaced">置換後文字列</param>
         /// <returns></returns>
-        public static string ReplaceWord(string vString, string vTarget, string vReplaced) {
+        public static string ReplaceWord(string vText, string vTarget, string vReplaced) {
 
-            string wReplacedText = vString.Replace(vTarget, vReplaced);
+            string wReplacedText = vText.Replace(vTarget, vReplaced);
 
             //置換文字列が見つからなかった場合
-            if (wReplacedText == vString) {
+            if (wReplacedText == vText) {
                 return $"問題用文字列の中に{vTarget}という単語は存在しません。";
             }
 
@@ -59,11 +64,11 @@ namespace Practice5_3_2 {
         /// <summary>
         /// 対象文字列を引数に受け取り、余計なスペースを削除した後の文字列を返します。
         /// </summary>
-        /// <param name="vString">対象文字列</param>
+        /// <param name="vText">対象文字列</param>
         /// <returns>余計なスペースを削除した後の文字列</returns>
-        public static string DeleteBlanks(string vString) {
+        public static string DeleteBlanks(string vText) {
             var wRegex = new Regex(@"\s+");
-            return wRegex.Replace(vString, " ");
+            return wRegex.Replace(vText, " ");
         }
     }
 }

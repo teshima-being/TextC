@@ -14,24 +14,19 @@ namespace Practice5_3_5 {
             //問題用文字列
             string wText = "jackdaws love my big sphinx of quartz";
 
+            if (string.IsNullOrEmpty(wText)) {
+                Console.WriteLine("問題用文字列がnullもしくは空文字であるため処理を中止します");
+                return;
+            }
+
             var wRemakedText = new StringBuilder();
-            foreach (string wWord in GetWordsArray(wText)) {
+            foreach (string wWord in wText.Split(' ')) {
                 wRemakedText.Append(wWord + ' ');
             }
 
             //リメイク後のテキストと元のテキスト両方表示して確認
             Console.WriteLine(wRemakedText.Remove(wRemakedText.Length - 1, 1));
             Console.WriteLine(wText);
-        }
-
-        /// <summary>
-        /// 文字列を引数に受け取り、文字列を半角スペースで区切って作成した文字列配列を返します。
-        /// </summary>
-        /// <param name="vString"></param>
-        /// <returns></returns>
-        public static string[] GetWordsArray(string vString) {
-            string[] wWordsArray = vString.Split(' ');
-            return wWordsArray;
         }
     }
 }
