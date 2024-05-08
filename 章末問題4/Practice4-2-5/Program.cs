@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Timers;
 
 namespace Practice4_2_5 {
     internal class Program {
@@ -22,7 +21,7 @@ namespace Practice4_2_5 {
             };
 
             //すべてのYearMonthの1ヵ月後を求め、新たな配列に格納する
-            YearMonth[] wOneMonthLaters = wYearMonths.Select(e => YearMonth.AddOneMonth(e)).ToArray();
+            YearMonth[] wOneMonthLaters = wYearMonths.Select(x => YearMonth.AddOneMonth(x)).ToArray();
 
             //新たな配列の各要素の内容をコンソールに表示する
             foreach (YearMonth wYearMonth in wOneMonthLaters) {
@@ -31,10 +30,10 @@ namespace Practice4_2_5 {
             }
 
             //すべてのYearMonthの1ヵ月後を求め、新たなListに格納する
-            List<YearMonth> wOneMonthPassed = wYearMonths.Select(e => YearMonth.AddOneMonth(e)).ToList();
+            List<YearMonth> wOneMonthPassed = wYearMonths.Select(x => YearMonth.AddOneMonth(x)).ToList();
 
             //新たなListの各要素の内容をコンソールに表示する
-            wOneMonthPassed.ForEach(e => Console.WriteLine(e +"は" + (e.Is21Century? "21世紀です" : "21世紀ではありません")));
+            wOneMonthPassed.ForEach(x => Console.WriteLine(x +"は" + (x.Is21Century? "21世紀です" : "21世紀ではありません")));
         }
     }
 }
