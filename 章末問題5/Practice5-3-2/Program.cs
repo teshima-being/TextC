@@ -12,17 +12,12 @@ namespace Practice5_3_2 {
             //問題用文字列
             string wText = "Jackdaws love my big sphinx of quartz";
 
-            if (string.IsNullOrEmpty(wText)) {
-                Console.WriteLine("問題用文字列がnullもしくは空文字であるため処理を中止します");
-                return;
-            }
-
             //置換したい文字列の指定（今回はbigを入力）
             Console.WriteLine("置換したい文字列を入力してください。");
             string wTargetWord = Console.ReadLine();
 
             //置換文字列に空文字を指定した場合は処理を終了する
-            if (wTargetWord == "") {
+            if (wTargetWord == string.Empty) {
                 Console.WriteLine("置換文字列に空文字は指定できません。");
                 return;
             }
@@ -42,7 +37,7 @@ namespace Practice5_3_2 {
         /// <param name="vText">対象文字列</param>
         /// <param name="vTarget">置換文字列</param>
         /// <param name="vReplaced">置換後文字列</param>
-        /// <returns></returns>
+        /// <returns>置換が完了した対象文字列</returns>
         public static string ReplaceWord(string vText, string vTarget, string vReplaced) {
 
             string wReplacedText = vText.Replace(vTarget, vReplaced);
@@ -53,7 +48,7 @@ namespace Practice5_3_2 {
             }
 
             //置換後文字列に空文字を指定した場合は余計な半角スペースを削除する
-            if (vReplaced == "") {
+            if (vReplaced == string.Empty) {
                 return DeleteBlanks(wReplacedText);
             }
 
@@ -68,7 +63,7 @@ namespace Practice5_3_2 {
         /// <returns>余計なスペースを削除した後の文字列</returns>
         public static string DeleteBlanks(string vText) {
             var wRegex = new Regex(@"\s+");
-            return wRegex.Replace(vText, " ");
+            return wRegex.Replace(vText, " ").Trim();
         }
     }
 }

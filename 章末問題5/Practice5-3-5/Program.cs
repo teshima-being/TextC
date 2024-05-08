@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Practice5_3_5 {
     internal class Program {
@@ -14,13 +15,8 @@ namespace Practice5_3_5 {
             //問題用文字列
             string wText = "jackdaws love my big sphinx of quartz";
 
-            if (string.IsNullOrEmpty(wText)) {
-                Console.WriteLine("問題用文字列がnullもしくは空文字であるため処理を中止します");
-                return;
-            }
-
             var wRemakedText = new StringBuilder();
-            foreach (string wWord in wText.Split(' ')) {
+            foreach (string wWord in Regex.Split(wText, @"\b\s+\b")) {
                 wRemakedText.Append(wWord + ' ');
             }
 

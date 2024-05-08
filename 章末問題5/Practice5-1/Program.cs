@@ -21,20 +21,9 @@ namespace Practice5_1 {
                 string wText2 = Console.ReadLine();
                 if (wText2 == "終了") break;
 
-                string wResult = CompareString(wText1, wText2)? "一致しています。":"一致していません。";
+                string wResult = string.Compare(wText1, wText2, ignoreCase:true) == 0? "一致しています。":"一致していません。";
                 Console.WriteLine($"2つの文字列は{wResult}");
             }
-        }
-
-        /// <summary>
-        /// 2つの文字列を引数に取り、文字列が等しいか否かをbool値で返します。
-        /// 比較の際には大文字と小文字の違いは無視をします。
-        /// </summary>
-        /// <param name="vText1">1つ目の文字列</param>
-        /// <param name="vText2">2つ目の文字列</param>
-        /// <returns>bool値</returns>
-        public static bool CompareString(string vText1, string vText2) {
-            return String.Compare(vText1, vText2, ignoreCase: true) == 0;
         }
     }
 }
