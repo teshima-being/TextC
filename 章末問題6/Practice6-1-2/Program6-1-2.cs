@@ -13,7 +13,7 @@ namespace Practice6_1_2 {
             //問題用配列
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
           
-            //ユーザー入力値による判定
+            //ユーザー入力値による判定（今回は2と入力する）
             Console.WriteLine("配列の後ろから抜き出したい要素の個数を指定してください。");
             if (!int.TryParse(Console.ReadLine(), out int wItemsCount)){
                 Console.WriteLine("有効な数値を入力してください。");
@@ -21,7 +21,7 @@ namespace Practice6_1_2 {
             }
 
             //配列の要素数による判定
-            if (wNumbers == null || wNumbers.Length < wItemsCount) {
+            if (wNumbers.Length < wItemsCount) {
                 Console.WriteLine($"配列内の要素が不足しているため、指定された個数分の要素を取得できません");
                 return;
             }

@@ -23,7 +23,7 @@ namespace Practice6_2_2 {
                 new Book("楽しいC#プログラミング教室", 2540, 348),
             };
 
-            Console.WriteLine("検索文字列を入力してください。");
+            Console.WriteLine("検索文字列を入力してください。"); //今回は"C#"を入力
             string wUserInput = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(wUserInput)) {

@@ -13,11 +13,6 @@ namespace Practice6_1_3 {
             //問題用配列
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
 
-            if (wNumbers == null || wNumbers.Length == 0) {
-                Console.WriteLine("配列に要素がありません。処理を終了します。");
-                return;
-            }
-
             //LINQを使う場合
             IEnumerable<string> wTextNumbers = wNumbers.Select(x => x.ToString());
             string wResult = string.Join(",", wTextNumbers);

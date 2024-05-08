@@ -14,11 +14,6 @@ namespace Practice6_1_5 {
             //問題用配列
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
 
-            if (wNumbers == null || wNumbers.Length == 0) {
-                Console.WriteLine("配列に要素がありません。処理を終了します。");
-                return;
-            }
-
             //LINQを使う場合
             int wOriginalNumbersCount = wNumbers.Distinct().Count(x => 10 < x);
             Console.WriteLine($"問題用配列の中に10より大きい値は{wOriginalNumbersCount}個あります。");
