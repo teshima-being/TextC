@@ -23,8 +23,7 @@ namespace Practice6_2_6 {
                 new Book("楽しいC#プログラミング教室", 2540, 348),
             };
 
-            IEnumerable<Book> wOverPagesBooks = wBooks.Where(x => x.Pages >= 400);
-            var wSortedBooks = wOverPagesBooks.OrderByDescending(x => x.Price);
+            IEnumerable<Book> wSortedBooks = wBooks.Where(x => x.Pages >= 400).OrderByDescending(x => x.Price);
 
             foreach (Book wBook in wSortedBooks) {
                 Console.WriteLine($"タイトル：{wBook.Title}, 価格：{wBook.Price}");
