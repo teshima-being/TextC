@@ -20,11 +20,6 @@ namespace Practice7_1_1 {
             //問題用配列
             string wText = "Cozy lummox gives smart squid who asks for job pen";
 
-            if (string.IsNullOrWhiteSpace(wText)) {
-                Console.WriteLine("テキストがnullもしくは空白文字で構成されています。");
-                return;
-            }
-
             var wCharCountDic = new Dictionary<char, int>();
 
             foreach (char wCharacter in wText.ToUpper()) {

@@ -22,7 +22,7 @@ namespace Practice7_2_1 {
         /// Abbreviationsクラスのコンストラクタ
         /// </summary>
         public Abbreviations() {
-            string[] wDataLines = File.ReadAllLines(@"..\..\Abbreviations.txt");
+            string[] wDataLines = File.ReadAllLines(@"\\being.group\Being-組織\システム開発課\Doc\中途入社研修\20240401-シャレッチョ・手島悠介\手島悠介\C#テキスト《イディオム》\AbbreViations.txt");
             this.FOrganizationsDic = wDataLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
         }
 

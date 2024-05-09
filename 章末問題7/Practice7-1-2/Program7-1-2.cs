@@ -13,11 +13,6 @@ namespace Practice7_1_2 {
             //問題用配列
             string wText = "Cozy lummox gives smart squid who asks for job pen";
 
-            if (string.IsNullOrWhiteSpace(wText)) {
-                Console.WriteLine("テキストがnullもしくは空白文字で構成されています。");
-                return;
-            }
-
             var wSortedCharCountDic = new SortedDictionary<char, int>();
 
             foreach (char wCharacter in wText.ToUpper()) {
@@ -26,7 +21,7 @@ namespace Practice7_1_2 {
                 if (!Regex.IsMatch(wCharacter.ToString(), @"[A-Z]")) continue;
 
                 //ディクショナリに存在しない要素は追加
-                if (!wSortedCharCountDic.TryGetValue(wCharacter, out int wCount)) {
+                if (!wSortedCharCountDic.ContainsKey(wCharacter)) {
                     wSortedCharCountDic.Add(wCharacter, 1);
                     continue;
                 }
