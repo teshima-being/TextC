@@ -1,6 +1,10 @@
 ﻿using System;
 
 namespace Practice8_3 {
+
+    /// <summary>
+    /// 処理時間を計測するTimeWatchクラス
+    /// </summary>
     internal class TimeWatch {
         
         private DateTime FTimeStamp;
