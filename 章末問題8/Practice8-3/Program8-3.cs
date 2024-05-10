@@ -15,7 +15,7 @@ namespace Practice8_3 {
             var wStopWatch = new TimeWatch();
             wStopWatch.Start();
 
-            string wName = "";
+            string wName = string.Empty;
             for (int wNum = 0; wNum < 10000; wNum++) {
                 wName = wName + "もちもち";
             }

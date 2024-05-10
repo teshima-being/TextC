@@ -6,12 +6,8 @@ namespace Practice8_2 {
         //問題8-2
         //テキストの次の指定曜日を求めるメソッドを参考に、次の週の指定曜日の日付を求めるメソッドを定義してください。
 
-        static void Main(string[] args) {
-            DateTime wResultDate = GetNextWeekDay(DateTime.Today, DayOfWeek.Saturday);
-            Console.WriteLine(wResultDate.ToString("M月d日(dddd)"));
-        }
-
-        //テキスト8-26：次の指定曜日を求めるメソッド
+        /*
+        テキスト8-26：次の指定曜日を求めるメソッド
         public static DateTime NextDay(DateTime date, DayOfWeek dayOfWeek) {
             var days = dayOfWeek - date.DayOfWeek;
             if (days <= 0) {
@@ -19,7 +15,13 @@ namespace Practice8_2 {
             }
             return date.AddDays(days);
         }
-        
+        */
+
+        static void Main(string[] args) {
+            DateTime wResultDate = GetNextWeekDay(DateTime.Today, DayOfWeek.Saturday);
+            Console.WriteLine(wResultDate.ToString("M月d日(dddd)"));
+        }
+
         /// <summary>
         /// 基準日と曜日を引数に取り、基準日から起算して翌週の指定曜日の日付を求めます。
         /// </summary>
