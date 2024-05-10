@@ -21,7 +21,7 @@ namespace Practice7_1_2 {
                 if (!Regex.IsMatch(wCharacter.ToString(), @"[A-Z]")) continue;
 
                 //ディクショナリに存在しない要素は追加
-                if (!wSortedCharCountDic.ContainsKey(wCharacter)) {
+                if (!wSortedCharCountDic.TryGetValue(wCharacter, out int _)){
                     wSortedCharCountDic.Add(wCharacter, 1);
                     continue;
                 }

@@ -22,7 +22,7 @@ namespace Practice7_2_1 {
         /// Abbreviationsクラスのコンストラクタ
         /// </summary>
         public Abbreviations() {
-            string[] wDataLines = File.ReadAllLines(@"\\being.group\Being-組織\システム開発課\Doc\中途入社研修\20240401-シャレッチョ・手島悠介\手島悠介\C#テキスト《イディオム》\AbbreViations.txt");
+            string[] wDataLines = File.ReadAllLines(@"..\..\AbbreViations.txt");
             this.FOrganizationsDic = wDataLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
         }
 
@@ -43,28 +43,6 @@ namespace Practice7_2_1 {
         public string this[string vAbbreviation] {
             get {
                 return this.FOrganizationsDic.ContainsKey(vAbbreviation) ? FOrganizationsDic[vAbbreviation] : null;
-            }
-        }
-
-        /// <summary>
-        /// 日本語名から対応する組織の略語を取り出します。
-        /// </summary>
-        /// <param name="vJapaneseName">組織の日本語名</param>
-        /// <returns>組織の略語</returns>
-        public string ToAbbreviation(string vJapaneseName) {
-            return this.FOrganizationsDic.FirstOrDefault(x => x.Value == vJapaneseName).Key;
-        }
-
-        /// <summary>
-        /// 文字列を引数に与え、Valueの値にその文字列が含まれる要素(Key、Value)をすべて取り出します。
-        /// </summary>
-        /// <param name="vSubstring"></param>
-        /// <returns>組織の日本語名に指定文字列を含む要素(Key, Value)の全て</returns>
-        public IEnumerable<KeyValuePair<string, string>> FindAll(string vSubstring) {
-            foreach (var wItem in this.FOrganizationsDic) {
-                if (wItem.Value.Contains(vSubstring)) {
-                    yield return wItem;
-                }
             }
         }
 
