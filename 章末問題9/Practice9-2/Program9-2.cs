@@ -39,7 +39,7 @@ namespace Practice9_2 {
                 if (wOutputFileName != Path.GetFileNameWithoutExtension(wFilePath)) break;
                 Console.WriteLine("読み込んだファイルと同じ名前は使用できません。再度名前の指定をしてください。");
             }
-            string wOutputPath = Path.Combine(wDirectoryName, wOutputFileName) + ".txt";
+            string wOutputPath = $"{Path.Combine(wDirectoryName, wOutputFileName)}.txt";
             File.WriteAllLines(wOutputPath, AddIndex(wFilePath));
         }
 
@@ -58,7 +58,7 @@ namespace Practice9_2 {
             }
 
             //行番号の最大桁数を求める
-            int wDigits = (int)Math.Log10(wTextLines.Count()) + 1;  //行番号の最大桁数を求める
+            int wDigits = (int)Math.Log10(wTextLines.Count()) + 1;
 
             return wTextLines.Select((x, y) => $"{(++y).ToString().PadLeft(wDigits)}: {x}");
         }

@@ -13,7 +13,7 @@ namespace Practice9_5 {
 
         static void Main(string[] args) {
 
-            Console.WriteLine("検索するディレクトリを指定してください。");
+            Console.WriteLine("検索するディレクトリパスを指定してください。");
             string wDirectory = Console.ReadLine();
 
             if (!Directory.Exists(wDirectory)) {
@@ -27,14 +27,14 @@ namespace Practice9_5 {
         }
 
         /// <summary>
-        /// 検索対象のDirectory名前とファイルサイズ(byte)を引数に取り、対象Directory配下の全てのファイルのうち、
+        /// 検索対象のDirectoryのパスとファイルサイズ(byte)を引数に取り、対象Directory配下の全てのファイルのうち、
         /// サイズが指定数値以上であるファイルの列挙可能なコレクションを返します。
         /// </summary>
-        /// <param name="vDirectoryName"></param>
-        /// <param name="vFileSize"></param>
+        /// <param name="vDirectoryPath">ディレクトリパス</param>
+        /// <param name="vFileSize">ファイルサイズ(byte)</param>
         /// <returns>ファイルサイズが指定数値以上のファイル情報のコレクション</returns>
-        public static IEnumerable<FileInfo> SearchFilesWithSize(string vDirectoryName, int vFileSize) {
-            var wTargetDirInfo = new DirectoryInfo(vDirectoryName);
+        public static IEnumerable<FileInfo> SearchFilesWithSize(string vDirectoryPath, int vFileSize) {
+            var wTargetDirInfo = new DirectoryInfo(vDirectoryPath);
             return wTargetDirInfo.EnumerateFiles("*", SearchOption.AllDirectories).Where(x => x.Length >= vFileSize);
         }
     }

@@ -14,7 +14,7 @@ namespace Practice9_4 {
 
         static void Main(string[] args) {
 
-            Console.WriteLine("コピー元のディレクトリを指定してください。");
+            Console.WriteLine("コピー元のディレクトリパスを指定してください。");
             string wUserInputDir = Console.ReadLine();
 
             if (!Directory.Exists(wUserInputDir)) {
@@ -30,7 +30,7 @@ namespace Practice9_4 {
                 return;
             }
 
-            Console.WriteLine("コピー先のディレクトリを指定してください。");
+            Console.WriteLine("コピー先のディレクトリパスを指定してください。");
             string wOutputDirPath = Console.ReadLine();
             Directory.CreateDirectory(wOutputDirPath);
 
@@ -44,15 +44,15 @@ namespace Practice9_4 {
         }
 
         /// <summary>
-        /// ファイルのコピー先のDirectory名とコピーするファイルのフルパスを引数に取り、
+        /// ファイルのコピー先のディレクトリパスとコピーするファイルのフルパスを引数に取り、
         /// 新たに作成するファイルのフルパスを返します。
         /// </summary>
-        /// <param name="vDirectoryPath">ファイルのコピー先のディレクトリ名</param>
+        /// <param name="vDirectoryPath">ファイルのコピー先のディレクトリパス</param>
         /// <param name="vFilePath">コピーするファイルのフルパス</param>
         /// <returns>作成するファイルのフルパス</returns>
         public static string CreateNewFilePath(string vDirectoryPath, string vFilePath) {
-            string wNewFileName = string.Concat(Path.GetFileNameWithoutExtension(vFilePath), "_bak", Path.GetExtension(vFilePath));
-            return Path.Combine(vDirectoryPath, wNewFileName);
+            string wNewFilePath = string.Concat(Path.GetFileNameWithoutExtension(vFilePath), "_bak", Path.GetExtension(vFilePath));
+            return Path.Combine(vDirectoryPath, wNewFilePath);
         }
     }
 }
