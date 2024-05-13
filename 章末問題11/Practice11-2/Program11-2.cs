@@ -51,7 +51,6 @@ namespace Practice11_2 {
             Console.WriteLine(wOutputRoot.ToString());
         }
 
-
         /// <summary>
         /// XMLファイルの要素を引数に取り、その要素の全ての子要素を属性に変換した要素を返します
         /// </summary>
