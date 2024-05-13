@@ -28,7 +28,7 @@ namespace Practice10_2 {
                 return;
             }
 
-            DisplayNumbers(wTextFilePath, 9);
+            DisplayNumbers(wTextFilePath, 3);
 
             Console.WriteLine("処理が終わりました。");
         }

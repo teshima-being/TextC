@@ -11,11 +11,11 @@ namespace Practice10_6 {
         static void Main(string[] args) {
 
             //確認用文字列
-            var wTexts = new string[] {"しんぶんし", "こんばんは", "くすりのりすく", "level", "０_９_０",
+            var wWords = new string[] {"しんぶんし", "こんばんは", "くすりのりすく", "level", "０_９_０",
                                        "はんしんは", "よわいわよ", "12321", "?_?_?", "e_e_e", "つまがまつ" };
 
-            foreach (var w in wTexts) {
-                Console.WriteLine($"{w} ⇒ {IsKaibun(w)}");
+            foreach (var wWord in wWords) {
+                Console.WriteLine($"{wWord} ⇒ {IsKaibun(wWord)}");
             }
         }
 

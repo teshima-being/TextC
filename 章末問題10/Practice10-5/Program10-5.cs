@@ -32,11 +32,11 @@ namespace Practice10_5 {
 
             string[] wTexts = File.ReadAllLines(wFilePath);
 
-            File.WriteAllLines(wFilePath, wTexts.Select(x => TagNameToLower(x)));
+            File.WriteAllLines(wFilePath, wTexts.Select(x => ConvertTagNameToLower(x)));
 
             //確認用
             foreach (string wText in wTexts) {
-                Console.WriteLine(TagNameToLower(wText));
+                Console.WriteLine(ConvertTagNameToLower(wText));
             }
         }
 
@@ -45,7 +45,7 @@ namespace Practice10_5 {
         /// </summary>
         /// <param name="vText">HTMLファイル内の文字列</param>
         /// <returns>置換後の文字列</returns>
-        public static string TagNameToLower(string vText) {
+        public static string ConvertTagNameToLower(string vText) {
             string wPattern = @"<(/?)([A-Z]+)(.*?)>";
             return Regex.Replace(vText, wPattern, x => { return string.Concat("<", x.Groups[1].Value, x.Groups[2].Value.ToLower(), x.Groups[3].Value, ">"); });
         }
