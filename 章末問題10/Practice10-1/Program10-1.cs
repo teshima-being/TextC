@@ -26,9 +26,7 @@ namespace Practice10_1 {
 
             //確認用
             foreach (string wText in wSampleTexts) {
-                if (IsPhoneNumber(wText)) {
-                    Console.WriteLine(wText);
-                }
+                if (IsPhoneNumber(wText)) Console.WriteLine(wText);
             }
         }
 

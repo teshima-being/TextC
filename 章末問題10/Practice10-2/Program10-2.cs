@@ -18,19 +18,30 @@ namespace Practice10_2 {
 
             string wTextFilePath = args[0];
 
-            if (!File.Exists(wTextFilePath)) {
-                Console.WriteLine("指定されたファイルは存在しません。パスを確認してください。");
-                return;
-            }
-
-            if (Path.GetExtension(wTextFilePath) != ".txt") {
-                Console.WriteLine("テキストファイルではありません。テキストファイルを指定してください。");
-                return;
-            }
+            //ファイルが存在しない、もしくはテキストファイルではない場合は処理を中止する
+            if (!IsTextFile(wTextFilePath)) return;
 
             DisplayNumbers(wTextFilePath, 3);
 
             Console.WriteLine("処理が終わりました。");
+        }
+
+        /// <summary>
+        /// ファイルパスを引数に取り、該当ファイルが存在するか、テキストファイルであるかを判定し、両方満たす場合のみ
+        /// trueを返します。
+        /// </summary>
+        /// <param name="vFilePath">ファイルパス</param>
+        /// <returns>bool値</returns>
+        public static bool IsTextFile(string vFilePath) {
+            if (!File.Exists(vFilePath)) {
+                Console.WriteLine("指定されたファイルは存在しません。パスを確認してください。");
+                return false;
+            }
+            if (Path.GetExtension(vFilePath) != ".txt") {
+                Console.WriteLine("テキストファイルではありません。テキストファイルを指定してください。");
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
@@ -55,6 +66,6 @@ namespace Practice10_2 {
             foreach (Match wMatch in wMatches) {
                 Console.WriteLine(wMatch.Value);
             }
-        }   
+        }
     }
 }
