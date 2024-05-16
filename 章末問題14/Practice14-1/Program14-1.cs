@@ -20,14 +20,7 @@ namespace Practice14_1 {
             }
 
             var wTextFilePath = args[0];
-
-            if (!File.Exists(wTextFilePath)) {
-                Console.WriteLine("ファイルが見つかりません。パスを確認してください。");
-            }
-
-            if (Path.GetExtension(wTextFilePath) != ".txt") {
-                Console.WriteLine("指定されたファイルはテキストファイルではありません。テキストファイルを指定してください。");
-            }
+            if(!IsTextFile(wTextFilePath)) return;
 
             int wProgramNumber = 0;
             foreach (var wProgramInfo in File.ReadLines(wTextFilePath)) {
@@ -38,6 +31,24 @@ namespace Practice14_1 {
                     Console.WriteLine($"{wProgramNumber}行目のプログラムが完了しました。");
                 }
             }
+        }
+
+        /// <summary>
+        /// ファイルパスを引数に取り、指定されたファイルが存在するかとテキストファイルであるかを判定し、
+        /// 両方満たす場合のみtrueを返します。
+        /// </summary>
+        /// <param name="vFilePath">ファイルパス</param>
+        /// <returns>bool値</returns>
+        static bool IsTextFile(string vFilePath) {
+            if (!File.Exists(vFilePath)) {
+                Console.WriteLine("ファイルが見つかりません。パスを確認してください。");
+                return false;
+            }
+            if (Path.GetExtension(vFilePath) != ".txt") {
+                Console.WriteLine("指定されたファイルはテキストファイルではありません。テキストファイルを指定してください。");
+                return false;
+            }
+            return true;
         }
 
         /// <summary>

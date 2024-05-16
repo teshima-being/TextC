@@ -21,10 +21,7 @@ namespace Practice14_5 {
             }
 
             string wZipFilePath = args[0];
-            if (Path.GetExtension(wZipFilePath) != ".zip") {
-                Console.WriteLine("ZIPファイルではありません。検索対象にはZIPファイルを指定してください。");
-                return;
-            }
+            if (!IsZipFile(wZipFilePath)) return;
 
             using (ZipArchive wZip = ZipFile.OpenRead(wZipFilePath)) {
                 var wAllTextFiles = wZip.Entries.Where(x => Path.GetExtension(x.Name) == ".txt");
@@ -46,6 +43,25 @@ namespace Practice14_5 {
             Console.WriteLine("処理が終了しました。");
 
             Console.ReadLine(); //確認用
+        }
+
+
+        /// <summary>
+        /// ファイルパスを引数に取り、指定されたファイルが存在するかとZIPファイルであるかを判定し、
+        /// 両方満たす場合のみtrueを返します。
+        /// </summary>
+        /// <param name="vFilePath">ファイルパス</param>
+        /// <returns>bool値</returns>
+        public static bool IsZipFile(string vFilePath) {
+            if (!File.Exists(vFilePath)) {
+                Console.WriteLine("ファイルが見つかりません。パスを確認してください。");
+                return false;
+            }
+            if (Path.GetExtension(vFilePath) != ".zip") {
+                Console.WriteLine("ZIPファイルではありません。検索対象にはZIPファイルを指定してください。");
+                return false;
+            }
+            return true;
         }
     }
 }
