@@ -1,0 +1,11 @@
+version="v4.0"は置換対象です
+version="v4.0は置換対象ではありません
+
+version =　"v4.0"は置換対象です
+version= " v4.0"は置換対象ではありません
+
+Version = "v4.0"は置換対象です
+Version = "V4.0"は置換対象ではありません
+
+/version="v4.0"は置換対象です
+newversion="v4.0"は置換対象ではありません
