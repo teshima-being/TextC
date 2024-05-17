@@ -20,9 +20,6 @@ namespace Practice11_2 {
         </difficultkanji>
         */
 
-        //サンプルファイルのパス
-        //\\being.group\Being-組織\システム開発課\Doc\中途入社研修\20240401-シャレッチョ・手島悠介\手島悠介\C#テキスト《イディオム》\Sample11-2.xml
-
         static void Main(string[] args) {
 
             if (args.Length == 0) {
@@ -32,17 +29,10 @@ namespace Practice11_2 {
 
             string wXFilePath = args[0];
 
-            if (!File.Exists(wXFilePath)) {
-                Console.WriteLine("指定したファイルが見つかりません。パスを確認してください。");
-                return;
-            }
-
-            if (Path.GetExtension(wXFilePath) != ".xml") {
-                Console.WriteLine("ファイルの拡張子が正しくありません。XMLファイルを指定してください。");
-            }
+            if (!IsXmlFile(wXFilePath)) return;
 
             var wKanjiData = XDocument.Load(wXFilePath).Descendants("word").Select(x => ConvertElementsToAttributes(x));
-            var wOutputRoot = new XElement("difficultkanji", wKanjiData);           
+            var wOutputRoot = new XElement("difficultkanji", wKanjiData);
 
             //読み込んだファイルと同じ階層に"KanjiData"の名前でファイルを保存する
             wOutputRoot.Save(Path.Combine(Path.GetDirectoryName(wXFilePath), "KanjiData.xml"));
@@ -62,6 +52,24 @@ namespace Practice11_2 {
             }
             vElement.Elements().Remove();
             return vElement;
+        }
+
+        /// <summary>
+        /// ファイルパスを引数に取り、指定したファイルが存在するかと、指定したファイルがXMLファイルであるかを判定します。
+        /// 指定したファイルが存在し、かつXMLファイルであった場合のみtrueを返します。
+        /// </summary>
+        /// <param name="vFilePath">ファイルパス</param>
+        /// <returns>bool値</returns>
+        static bool IsXmlFile(string vFilePath) {
+            if (!File.Exists(vFilePath)) {
+                Console.WriteLine("指定したファイルが見つかりません。パスを確認してください。");
+                return false;
+            }
+            if (Path.GetExtension(vFilePath) != ".xml") {
+                Console.WriteLine("ファイルの拡張子が正しくありません。XMLファイルを指定してください。");
+                return false;
+            }
+            return true;
         }
     }
 }

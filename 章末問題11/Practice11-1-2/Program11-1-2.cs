@@ -19,14 +19,7 @@ namespace Practice11_1_2 {
 
             string wXFilePath = args[0];
 
-            if (!File.Exists(wXFilePath)) {
-                Console.WriteLine("指定したファイルが見つかりません。パスを確認してください。");
-                return;
-            }
-
-            if (Path.GetExtension(wXFilePath) != ".xml") {
-                Console.WriteLine("ファイルの拡張子が正しくありません。XMLファイルを指定してください。");
-            }
+            if (!IsXmlFile(wXFilePath)) return;
 
             var wBallSportsData = XDocument.Load(wXFilePath);
             IEnumerable<XElement> wBallSports = wBallSportsData.Root.Elements().OrderBy(x => x.Element("firstplayed").Value);
@@ -35,6 +28,24 @@ namespace Practice11_1_2 {
             foreach (XElement wBallSport in wBallSports) {
                 Console.WriteLine(wBallSport.Element("name").Attribute("kanji").Value);
             }
+        }
+
+        /// <summary>
+        /// ファイルパスを引数に取り、指定したファイルが存在するかと、指定したファイルがXMLファイルであるかを判定します。
+        /// 指定したファイルが存在し、かつXMLファイルであった場合のみtrueを返します。
+        /// </summary>
+        /// <param name="vFilePath">ファイルパス</param>
+        /// <returns>bool値</returns>
+        static bool IsXmlFile(string vFilePath) {
+            if (!File.Exists(vFilePath)) {
+                Console.WriteLine("指定したファイルが見つかりません。パスを確認してください。");
+                return false;
+            }
+            if (Path.GetExtension(vFilePath) != ".xml") {
+                Console.WriteLine("ファイルの拡張子が正しくありません。XMLファイルを指定してください。");
+                return false;
+            }
+            return true;
         }
     }
 }
