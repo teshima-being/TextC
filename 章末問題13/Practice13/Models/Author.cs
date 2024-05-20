@@ -15,12 +15,12 @@ namespace Practice13.Models {
         /// <summary>
         /// 氏名
         /// </summary>
-        public string Name { get; private set;}
+        public string Name { get; private set; }
 
         /// <summary>
         /// 生年
         /// </summary>
-        public DateTime Birthday { get; private set;}
+        public DateTime Birthday { get; private set; }
 
         /// <summary>
         /// 性別
