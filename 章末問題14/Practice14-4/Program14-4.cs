@@ -23,7 +23,8 @@ namespace Practice14_4 {
             string wHTMLText;
             try {
                 wHTMLText = wWebClient.DownloadString(wURL);
-            } catch (WebException) {
+            } catch (WebException wError) {
+                Console.WriteLine($"エラーメッセージ：{wError.Message}");
                 Console.WriteLine("サイトの情報を読み込めません。URLを確認してください。");
                 return;
             }

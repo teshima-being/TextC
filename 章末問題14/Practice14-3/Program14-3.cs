@@ -26,6 +26,11 @@ namespace Practice14_3 {
 
             var wSettings = ConfigurationManager.GetSection("myAppSettings") as MyAppSettings;
 
+            if (wSettings == null) {
+                Console.WriteLine("構成ファイルを読み込めませんでした。構成セクションのパスを確認してください。");
+                return;
+            }
+
             //TraceOptionの確認
             TraceOption wTraceOption = wSettings.TraceOption;
             Console.WriteLine($"{wTraceOption.BufferSize}\n{wTraceOption.Enabled}\n{wTraceOption.FilePath}");
