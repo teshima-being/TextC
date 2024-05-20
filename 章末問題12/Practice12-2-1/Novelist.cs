@@ -16,6 +16,7 @@ namespace Practice12_2_1 {
         /// </summary>
         [XmlElement("name")]
         [DataMember(Name = "name")]
+
         public string Name { get; }
 
         /// <summary>
@@ -23,6 +24,7 @@ namespace Practice12_2_1 {
         /// </summary>
         [XmlElement("birth")]
         [DataMember(Name = "birth")]
+
         public DateTime Birth { get; }
 
         /// <summary>
@@ -31,6 +33,7 @@ namespace Practice12_2_1 {
         [XmlArray("masterpieces")]
         [XmlArrayItem("title")]
         [DataMember(Name = "masterpieces")]
+
         public string[] Masterpieces { get; }
 
         /// <summary>

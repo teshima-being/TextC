@@ -13,6 +13,7 @@ namespace Practice12_1_4 {
         /// ID
         /// </summary>
         [IgnoreDataMember]
+
         public int Id { get; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace Practice12_1_4 {
         /// 雇用日
         /// </summary>
         [DataMember(Name = "hiredate")]
+
         public DateTime HireDate { get; }
 
         /// <summary>
