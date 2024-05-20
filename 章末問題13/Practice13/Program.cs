@@ -118,7 +118,7 @@ namespace Practice13 {
                         Console.WriteLine($"{wBook.Title}は著者情報の登録がありません。著者情報を登録してください。");
                         continue;
                     }
-                    var wAuthor = wDB.Authors.Single(x => x.Name == wBook.Author.Name);
+                    var wAuthor = wDB.Authors.First(x => x.Name == wBook.Author.Name);
                     wBook.Author = wAuthor;
                     wDB.Books.Add(wBook);
                 }

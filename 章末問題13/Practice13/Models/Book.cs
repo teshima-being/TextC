@@ -8,17 +8,17 @@
         /// <summary>
         /// ID
         /// </summary>
-        public int Id { get; set; }
+        public int Id { get; private set;}
 
         /// <summary>
         /// タイトル
         /// </summary>
-        public string Title { get; set; }
+        public string Title { get; private set;}
 
         /// <summary>
         /// 出版年
         /// </summary>
-        public int PublishedYear { get; set; }
+        public int PublishedYear { get; private set; }
 
         /// <summary>
         /// 著者 

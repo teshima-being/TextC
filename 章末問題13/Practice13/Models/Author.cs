@@ -10,22 +10,22 @@ namespace Practice13.Models {
         /// <summary>
         /// ID
         /// </summary>
-        public int Id { get; set; }
+        public int Id { get; private set; }
 
         /// <summary>
         /// 氏名
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; private set;}
 
         /// <summary>
         /// 生年
         /// </summary>
-        public DateTime Birthday { get; set; }
+        public DateTime Birthday { get; private set;}
 
         /// <summary>
         /// 性別
         /// </summary>
-        public string Gender { get; set; }
+        public string Gender { get; private set; }
 
         /// <summary>
         /// 著作
