@@ -8,18 +8,18 @@
         /// <summary>
         /// カテゴリID
         /// </summary>
-        public int Id { get; set; }
+        public int Id { get; }
 
         /// <summary>
         /// カテゴリ名
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; }
 
         /// <summary>
-        /// カテゴリクラスのコンストラクタ
+        /// コンストラクタ
         /// </summary>
-        /// <param name="vId"></param>
-        /// <param name="vName"></param>
+        /// <param name="vId">カテゴリID</param>
+        /// <param name="vName">カテゴリ名</param>
         public Category(int vId, string vName) {
             this.Id = vId;
             this.Name = vName;

@@ -18,15 +18,10 @@ namespace Practice15 {
         public static IEnumerable<Book> Books { get; private set; }
 
         /// <summary>
-        /// Libraryクラスのコンストラクタ
+        /// コンストラクタ
         /// </summary>
         static Library() {
-            Books = FBooks;
-            Categories = FCategories;
-        }
-
-        //追加する書籍のリスト
-        public readonly static List<Book> FBooks = new List<Book>() {
+            Books = new List<Book>() {
                 new Book("Writing C# Solid Code", 1, 2500, 2016),
                 new Book("C# 開発指南", 1, 3800, 2014),
                 new Book("Visual C# 再入門", 1, 2780, 2016),
@@ -48,13 +43,13 @@ namespace Practice15 {
                 new Book("楽しく学ぶ Excel 初級編", 5, 2800, 2015),
             };
 
-        //追加する書籍のカテゴリのリスト
-        public readonly static List<Category> FCategories = new List<Category>() {
+            Categories = new List<Category>() {
                 new Category(1, "Development"),
                 new Category(2, "Server"),
                 new Category(3, "Web Design"),
                 new Category(4, "Windows"),
                 new Category(5, "Application"),
             };
+        }
     }
 }

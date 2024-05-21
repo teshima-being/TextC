@@ -13,12 +13,12 @@
         /// <summary>
         /// 価格
         /// </summary>
-        public int Price { get; set; }
+        public int Price { get; }
 
         /// <summary>
         /// カテゴリID
         /// </summary>
-        public int CategoryId { get; set; }
+        public int CategoryId { get; }
 
         /// <summary>
         /// 発行年
@@ -31,7 +31,7 @@
         /// <param name="vTitle">タイトル</param>
         /// <param name="vCategoryId">カテゴリID</param>
         /// <param name="vPrice">価格</param>
-        /// <param name="vPublishedYear">八光年</param>
+        /// <param name="vPublishedYear">発行年</param>
         public Book(string vTitle, int vCategoryId, int vPrice, int vPublishedYear) {
             this.Title = vTitle;
             this.CategoryId = vCategoryId;
