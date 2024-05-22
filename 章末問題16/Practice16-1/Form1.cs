@@ -24,10 +24,10 @@ namespace Practice16_1 {
         /// </summary>
         /// <param name="sender">ファイル検索ボタン</param>
         /// <param name="e">クリック</param>
-        private void ShowSelectedFilePath(object sender, EventArgs e) {
+        private void FButtonSearchFile_Click(object sender, EventArgs e) {
 
             //結果表示用のテキストボックスの値をリセット
-            ResultTextBox.Text = string.Empty;
+            FTextBoxResult.Text = string.Empty;
 
             var wFileDialog = new OpenFileDialog();
             wFileDialog.Title = "ファイル選択";
@@ -35,7 +35,7 @@ namespace Practice16_1 {
             wFileDialog.Filter = "Text files(*.txt) | *.txt";
 
             if (wFileDialog.ShowDialog() == DialogResult.OK) {
-                FilePathTextBox.Text = wFileDialog.FileName;
+                FTextBoxFilePath.Text = wFileDialog.FileName;
             }
         }
 
@@ -45,13 +45,13 @@ namespace Practice16_1 {
         /// </summary>
         /// <param name="sender">テキスト表示ボタン</param>
         /// <param name="e">クリック</param>
-        private async void ShowFileText(object sender, EventArgs e) {
+        private async void FButtonDisplayText_Click(object sender, EventArgs e) {
 
-            if (FilePathTextBox.Text == string.Empty) {
+            if (FTextBoxFilePath.Text == string.Empty) {
                 MessageBox.Show("ファイルが選択されていません。\nファイル選択ボタンから対象ファイルを選んでください。", "確認メッセージ");
                 return;
             }
-            await ShowText(FilePathTextBox.Text);
+            await ShowText(FTextBoxFilePath.Text);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Practice16_1 {
                     wStringBuilder.AppendLine(wText);
                 }
             }
-            ResultTextBox.Text = wStringBuilder.ToString();
+            FTextBoxResult.Text = wStringBuilder.ToString();
         }
     }
 }
