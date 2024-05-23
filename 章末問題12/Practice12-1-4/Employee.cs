@@ -20,14 +20,14 @@ namespace Practice12_1_4 {
         /// 名前
         /// </summary>
         [DataMember(Name = "name")]
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
         /// <summary>
         /// 雇用日
         /// </summary>
         [DataMember(Name = "hiredate")]
 
-        public DateTime HireDate { get; }
+        public DateTime HireDate { get; private set; }
 
         /// <summary>
         /// Employeeクラスのコンストラクタ

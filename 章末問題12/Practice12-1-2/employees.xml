@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfemployee xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Practice12_1_1">
+ <employee>
+  <hiredate>1993-04-01T00:00:00</hiredate>
+  <id>1</id>
+  <name>総務太郎</name>
+ </employee>
+ <employee>
+  <hiredate>2000-10-01T00:00:00</hiredate>
+  <id>2</id>
+  <name>三重花子</name>
+ </employee>
+ <employee>
+  <hiredate>2012-07-01T00:00:00</hiredate>
+  <id>3</id>
+  <name>事務健太</name>
+ </employee>
+ <employee>
+  <hiredate>2020-05-01T00:00:00</hiredate>
+  <id>4</id>
+  <name>名張美佳</name>
+ </employee>
+ <employee>
+  <hiredate>2024-04-01T00:00:00</hiredate>
+  <id>5</id>
+  <name>美旗浩二</name>
+ </employee>
+</ArrayOfemployee>

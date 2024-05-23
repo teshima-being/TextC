@@ -17,7 +17,7 @@ namespace Practice12_2_1 {
         [XmlElement("name")]
         [DataMember(Name = "name")]
 
-        public string Name { get; }
+        public string Name { get; set; }
 
         /// <summary>
         /// 生年
@@ -25,7 +25,7 @@ namespace Practice12_2_1 {
         [XmlElement("birth")]
         [DataMember(Name = "birth")]
 
-        public DateTime Birth { get; }
+        public DateTime Birth { get; set; }
 
         /// <summary>
         /// 代表作
@@ -34,7 +34,7 @@ namespace Practice12_2_1 {
         [XmlArrayItem("title")]
         [DataMember(Name = "masterpieces")]
 
-        public string[] Masterpieces { get; }
+        public string[] Masterpieces { get; set; }
 
         /// <summary>
         /// 作家クラスのコンストラクタ

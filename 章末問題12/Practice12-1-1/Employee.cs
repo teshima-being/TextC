@@ -17,7 +17,7 @@ namespace Practice12_1_1 {
         [XmlElement(ElementName = "id")]
         [DataMember(Name = "id")]
 
-        public int Id { get; }
+        public int Id { get; set; }
 
         /// <summary>
         /// 名前
@@ -32,12 +32,12 @@ namespace Practice12_1_1 {
         [XmlElement(ElementName = "hiredate")]
         [DataMember(Name = "hiredate")]
 
-        public DateTime HireDate { get; }
+        public DateTime HireDate { get; set; }
 
         /// <summary>
         /// パラメータを持たない既定のコンストラクタ(XMLSerializerのため)
         /// </summary>
-        public Employee() {}
+        public Employee() { }
 
         /// <summary>
         /// Employeeクラスのコンストラクタ
