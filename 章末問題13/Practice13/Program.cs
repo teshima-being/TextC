@@ -114,11 +114,11 @@ namespace Practice13 {
         static void AddBooks(IEnumerable<Book> vBooks) {
             using (var wDB = new BooksDbContext()) {
                 foreach (Book wBook in vBooks) {
-                    if (!wDB.Authors.Any(x => x.Name == wBook.Author.Name)) {
+                    Author wAuthor = wDB.Authors.FirstOrDefault(x => x.Name == wBook.Author.Name);
+                    if (wAuthor == null) {
                         Console.WriteLine($"{wBook.Title}は著者情報の登録がありません。著者情報を登録してください。");
                         continue;
                     }
-                    var wAuthor = wDB.Authors.First(x => x.Name == wBook.Author.Name);
                     wBook.Author = wAuthor;
                     wDB.Books.Add(wBook);
                 }
