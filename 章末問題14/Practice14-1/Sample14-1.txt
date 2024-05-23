@@ -1,0 +1,4 @@
+..\..\..\Practice14-2\obj\Debug\Practice14-2.exe
+..\..\..\Practice14-4\obj\Debug\Practice14-4.exe,https://codic.jp/,..\..\..\Practice14-4\Sample14-4.html
+..\..\..\Practice14-5\obj\Debug\Practice14-5.exe,..\..\..\Practice14-5\Sample14-5.zip,..\..\..\Practice14-5\Sample14-5
+..\..\..\Practice14-6\obj\Debug\Practice14-6.exe
