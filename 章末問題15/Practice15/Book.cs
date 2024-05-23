@@ -26,7 +26,7 @@
         public int PublishedYear { get; }
 
         /// <summary>
-        /// 書籍クラスのコンストラクタ
+        /// コンストラクタ
         /// </summary>
         /// <param name="vTitle">タイトル</param>
         /// <param name="vCategoryId">カテゴリID</param>

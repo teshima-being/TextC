@@ -10,12 +10,12 @@ namespace Practice15 {
         /// <summary>
         /// カテゴリ一覧
         /// </summary>
-        public static IEnumerable<Category> Categories { get; private set; }
+        public static IEnumerable<Category> Categories { get; }
 
         /// <summary>
-        /// 
+        /// 書籍一覧
         /// </summary>
-        public static IEnumerable<Book> Books { get; private set; }
+        public static IEnumerable<Book> Books { get; }
 
         /// <summary>
         /// コンストラクタ
