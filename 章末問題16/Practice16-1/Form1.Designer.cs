@@ -1,5 +1,5 @@
 ﻿namespace Practice16_1 {
-    partial class Form1 {
+    partial class FFormDisplayText {
         /// <summary>
         /// 必要なデザイナー変数です。
         /// </summary>
@@ -23,24 +23,24 @@
         /// コード エディターで変更しないでください。
         /// </summary>
         private void InitializeComponent() {
-            this.Label1 = new System.Windows.Forms.Label();
+            this.FLabelFilePath = new System.Windows.Forms.Label();
             this.FTextBoxFilePath = new System.Windows.Forms.TextBox();
             this.FButtonSearchFile = new System.Windows.Forms.Button();
             this.ShowTextLabel = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
+            this.FLabelResultText = new System.Windows.Forms.Label();
             this.FButtonDisplayText = new System.Windows.Forms.Button();
             this.FTextBoxResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // Label1
+            // FLabelFilePath
             // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Label1.Location = new System.Drawing.Point(36, 45);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(543, 20);
-            this.Label1.TabIndex = 0;
-            this.Label1.Text = "ファイル検索をクリックし、読み込むテキストファイルを指定してください。";
+            this.FLabelFilePath.AutoSize = true;
+            this.FLabelFilePath.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.FLabelFilePath.Location = new System.Drawing.Point(36, 32);
+            this.FLabelFilePath.Name = "FLabelFilePath";
+            this.FLabelFilePath.Size = new System.Drawing.Size(543, 20);
+            this.FLabelFilePath.TabIndex = 0;
+            this.FLabelFilePath.Text = "ファイル検索をクリックし、読み込むテキストファイルを指定してください。";
             // 
             // FTextBoxFilePath
             // 
@@ -49,14 +49,14 @@
             this.FTextBoxFilePath.Location = new System.Drawing.Point(40, 97);
             this.FTextBoxFilePath.Name = "FTextBoxFilePath";
             this.FTextBoxFilePath.ReadOnly = true;
-            this.FTextBoxFilePath.Size = new System.Drawing.Size(630, 22);
+            this.FTextBoxFilePath.Size = new System.Drawing.Size(869, 22);
             this.FTextBoxFilePath.TabIndex = 1;
             // 
             // FButtonSearchFile
             // 
             this.FButtonSearchFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FButtonSearchFile.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FButtonSearchFile.Location = new System.Drawing.Point(716, 73);
+            this.FButtonSearchFile.Location = new System.Drawing.Point(955, 73);
             this.FButtonSearchFile.Name = "FButtonSearchFile";
             this.FButtonSearchFile.Size = new System.Drawing.Size(146, 62);
             this.FButtonSearchFile.TabIndex = 2;
@@ -72,21 +72,21 @@
             this.ShowTextLabel.Size = new System.Drawing.Size(0, 15);
             this.ShowTextLabel.TabIndex = 3;
             // 
-            // Label2
+            // FLabelResultText
             // 
-            this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Label2.Location = new System.Drawing.Point(36, 185);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(613, 20);
-            this.Label2.TabIndex = 4;
-            this.Label2.Text = "テキスト表示をクリックすると、上記ファイルのテキストを表示することができます。";
+            this.FLabelResultText.AutoSize = true;
+            this.FLabelResultText.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.FLabelResultText.Location = new System.Drawing.Point(36, 164);
+            this.FLabelResultText.Name = "FLabelResultText";
+            this.FLabelResultText.Size = new System.Drawing.Size(613, 20);
+            this.FLabelResultText.TabIndex = 4;
+            this.FLabelResultText.Text = "テキスト表示をクリックすると、上記ファイルのテキストを表示することができます。";
             // 
             // FButtonDisplayText
             // 
             this.FButtonDisplayText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FButtonDisplayText.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FButtonDisplayText.Location = new System.Drawing.Point(716, 164);
+            this.FButtonDisplayText.Location = new System.Drawing.Point(955, 164);
             this.FButtonDisplayText.Name = "FButtonDisplayText";
             this.FButtonDisplayText.Size = new System.Drawing.Size(146, 62);
             this.FButtonDisplayText.TabIndex = 5;
@@ -100,28 +100,29 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FTextBoxResult.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FTextBoxResult.Location = new System.Drawing.Point(40, 234);
+            this.FTextBoxResult.Location = new System.Drawing.Point(40, 257);
             this.FTextBoxResult.Multiline = true;
             this.FTextBoxResult.Name = "FTextBoxResult";
             this.FTextBoxResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.FTextBoxResult.Size = new System.Drawing.Size(630, 332);
+            this.FTextBoxResult.Size = new System.Drawing.Size(1090, 472);
             this.FTextBoxResult.TabIndex = 6;
             // 
-            // Form1
+            // FFormDisplayText
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 603);
+            this.ClientSize = new System.Drawing.Size(1175, 766);
             this.Controls.Add(this.FTextBoxResult);
             this.Controls.Add(this.FButtonDisplayText);
-            this.Controls.Add(this.Label2);
+            this.Controls.Add(this.FLabelResultText);
             this.Controls.Add(this.ShowTextLabel);
             this.Controls.Add(this.FButtonSearchFile);
             this.Controls.Add(this.FTextBoxFilePath);
-            this.Controls.Add(this.Label1);
-            this.MinimumSize = new System.Drawing.Size(850, 650);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.FLabelFilePath);
+            this.MinimumSize = new System.Drawing.Size(900, 650);
+            this.Name = "FFormDisplayText";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "テキスト出力フォーム";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,11 +130,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.Label FLabelFilePath;
         private System.Windows.Forms.TextBox FTextBoxFilePath;
         private System.Windows.Forms.Button FButtonSearchFile;
         private System.Windows.Forms.Label ShowTextLabel;
-        private System.Windows.Forms.Label Label2;
+        private System.Windows.Forms.Label FLabelResultText;
         private System.Windows.Forms.Button FButtonDisplayText;
         private System.Windows.Forms.TextBox FTextBoxResult;
     }

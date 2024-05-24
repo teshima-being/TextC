@@ -14,7 +14,7 @@ namespace Practice16_1 {
             SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FFormDisplayText());
         }
         
         /// <summary>

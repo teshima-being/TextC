@@ -9,12 +9,12 @@ namespace Practice16_1 {
     /// <summary>
     /// WindowsFormsクラス
     /// </summary>
-    public partial class Form1 : Form {
+    public partial class FFormDisplayText : Form {
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public Form1() {
+        public FFormDisplayText() {
             InitializeComponent();
         }
 
