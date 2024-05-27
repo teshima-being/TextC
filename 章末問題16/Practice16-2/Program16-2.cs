@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -32,16 +31,16 @@ namespace Practice16_2 {
 
             string[] wFilePaths = Directory.GetFiles(wDirPath, "*.cs", SearchOption.AllDirectories);
 
+
             while (true) {
                 Console.WriteLine($"並列処理をしない場合は0\nTaskクラスで並列処理をする場合は1\nPLINQで並列処理をする場合は3\nを入力してください。");
 
-                if (int.TryParse(Console.ReadLine(), out int wUserInputNumber)) {
-                    if (0 <= wUserInputNumber && wUserInputNumber <= 2) {
-                        DisplayResult(wUserInputNumber, wFilePaths);
-                        break;
-                    }
+                string wUserInput = Console.ReadLine();
+                if (Regex.IsMatch(wUserInput, "^[012]$")) {
+                    DisplayResult(int.Parse(wUserInput), wFilePaths);
+                } else {
+                    Console.WriteLine("入力値が不正です。半角数字 0, 1, 2 のいずれかで指定してください。");
                 }
-                Console.WriteLine("入力値が不正です。0, 1, 2 のいずれかで指定してください。");
             }
         }
 
@@ -105,13 +104,17 @@ namespace Practice16_2 {
             }
         }
 
-
-        static void DisplayResult(int vNumber, IEnumerable<string> vFilePaths) {
+        /// <summary>
+        /// ファイルパスの文字列配列とユーザーの入力数値を引数に取り、ユーザーの入力数値に応じて結果をコンソールに表示する。
+        /// </summary>
+        /// <param name="vUserInputNumber">ユーザーの入力数値</param>
+        /// <param name="vFilePaths">ファイルパスの文字列配列</param>
+        static void DisplayResult(int vUserInputNumber, IEnumerable<string> vFilePaths) {
 
             var wSW = new Stopwatch();
             wSW.Start();
 
-            switch (vNumber) {
+            switch (vUserInputNumber) {
                 case 0:
                     Console.WriteLine("********並列処理を利用しなかった場合********");
                     SearchAllFiles(vFilePaths);
