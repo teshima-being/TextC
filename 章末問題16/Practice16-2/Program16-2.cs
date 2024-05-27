@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -31,28 +32,17 @@ namespace Practice16_2 {
 
             string[] wFilePaths = Directory.GetFiles(wDirPath, "*.cs", SearchOption.AllDirectories);
 
-            //ストップウォッチの初期化
-            var wSW = new Stopwatch();
+            while (true) {
+                Console.WriteLine($"並列処理をしない場合は0\nTaskクラスで並列処理をする場合は1\nPLINQで並列処理をする場合は3\nを入力してください。");
 
-            Console.WriteLine("********並列処理を利用しなかった場合********");
-            wSW.Start();
-            SearchAllFiles(wFilePaths);
-            wSW.Stop();
-            Console.WriteLine($"処理に要した時間は{wSW.ElapsedMilliseconds}ミリ秒でした。");
-
-            Console.WriteLine("**********Taskクラスを利用した場合**********");
-            wSW.Reset();
-            wSW.Start();
-            SearchAllFilesWithTask(wFilePaths).Wait();
-            wSW.Stop();
-            Console.WriteLine($"処理に要した時間は{wSW.ElapsedMilliseconds}ミリ秒でした。");
-
-            Console.WriteLine("************PLINQを利用した場合************");
-            wSW.Reset();
-            wSW.Start();
-            SearchAllFilesWithPlinq(wFilePaths);
-            wSW.Stop();
-            Console.WriteLine($"処理に要した時間は{wSW.ElapsedMilliseconds}ミリ秒でした。");
+                if (int.TryParse(Console.ReadLine(), out int wUserInputNumber)) {
+                    if (0 <= wUserInputNumber && wUserInputNumber <= 2) {
+                        DisplayResult(wUserInputNumber, wFilePaths);
+                        break;
+                    }
+                }
+                Console.WriteLine("入力値が不正です。0, 1, 2 のいずれかで指定してください。");
+            }
         }
 
         /// <summary>
@@ -113,6 +103,31 @@ namespace Practice16_2 {
             if (Regex.IsMatch(wText, @"\basync\b") && Regex.IsMatch(wText, @"\bawait\b")) {
                 Console.WriteLine(vFilePath);
             }
+        }
+
+
+        static void DisplayResult(int vNumber, IEnumerable<string> vFilePaths) {
+
+            var wSW = new Stopwatch();
+            wSW.Start();
+
+            switch (vNumber) {
+                case 0:
+                    Console.WriteLine("********並列処理を利用しなかった場合********");
+                    SearchAllFiles(vFilePaths);
+                    break;
+                case 1:
+                    Console.WriteLine("**********Taskクラスを利用した場合**********");
+                    SearchAllFilesWithTask(vFilePaths).Wait();
+                    break;
+                case 2:
+                    Console.WriteLine("************PLINQを利用した場合************");
+                    SearchAllFilesWithPlinq(vFilePaths);
+                    break;
+            }
+
+            wSW.Stop();
+            Console.WriteLine($"処理に要した時間は{wSW.ElapsedMilliseconds}ミリ秒でした。");
         }
     }
 }

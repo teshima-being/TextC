@@ -70,14 +70,5 @@ namespace Practice16_1 {
             }
             FTextBoxResult.Text = wStringBuilder.ToString();
         }
-
-        /// <summary>
-        /// キャンセルボタンがクリックされたときにフォームを閉じます。
-        /// </summary>
-        /// <param name="sender">キャンセルボタン</param>
-        /// <param name="e">クリック</param>
-        private void FButtonCancel_Click(object sender, EventArgs e) {
-            this.Close();
-        }
     }
 }
